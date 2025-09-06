@@ -1,0 +1,330 @@
+/* Arabic Text Optimization and Fixes */
+
+/* Force proper Arabic font rendering */
+@font-face {
+  font-family: 'Arabic-Fallback';
+  src: local('Tahoma'), local('Arial Unicode MS'), local('Segoe UI');
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+/* Global Arabic text settings */
+html {
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-synthesis: none;
+  font-variant-ligatures: common-ligatures;
+  font-kerning: auto;
+}
+
+/* Ensure proper Arabic text direction */
+[dir="rtl"] {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Fix common Bootstrap RTL issues */
+.container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  direction: rtl;
+}
+
+.row {
+  direction: rtl;
+}
+
+.col, [class*="col-"] {
+  direction: rtl;
+}
+
+/* Fix navbar RTL */
+.navbar-nav {
+  direction: rtl;
+  text-align: right;
+}
+
+.navbar-nav .nav-link {
+  text-align: right;
+  direction: rtl;
+}
+
+.dropdown-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix form elements RTL */
+.form-control, .form-select, .form-check-input {
+  direction: rtl;
+  text-align: right;
+}
+
+.form-control::placeholder {
+  direction: rtl;
+  text-align: right;
+  opacity: 0.7;
+}
+
+.form-check {
+  direction: rtl;
+  text-align: right;
+}
+
+.form-check-input {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+.form-check-label {
+  padding-right: 0;
+  padding-left: 0.5rem;
+}
+
+/* Fix button text alignment */
+.btn {
+  direction: rtl;
+  text-align: center;
+}
+
+/* Fix modal RTL */
+.modal-dialog {
+  direction: rtl;
+}
+
+.modal-content {
+  direction: rtl;
+  text-align: right;
+}
+
+.modal-header {
+  direction: rtl;
+}
+
+.modal-body {
+  direction: rtl;
+  text-align: right;
+}
+
+.modal-footer {
+  direction: rtl;
+}
+
+/* Fix card RTL */
+.card {
+  direction: rtl;
+  text-align: right;
+}
+
+.card-header, .card-body, .card-footer {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix list RTL */
+.list-group {
+  direction: rtl;
+}
+
+.list-group-item {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix table RTL */
+.table {
+  direction: rtl;
+}
+
+.table th, .table td {
+  text-align: right;
+}
+
+/* Fix alert RTL */
+.alert {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix breadcrumb RTL */
+.breadcrumb {
+  direction: rtl;
+}
+
+.breadcrumb-item {
+  direction: rtl;
+}
+
+/* Fix pagination RTL */
+.pagination {
+  direction: rtl;
+}
+
+/* Fix progress RTL */
+.progress {
+  direction: rtl;
+}
+
+/* Specific fixes for our components */
+.hero-figure {
+  direction: ltr; /* Keep images LTR */
+}
+
+.portfolio-card {
+  direction: rtl;
+}
+
+.team-card {
+  direction: rtl;
+  text-align: center;
+}
+
+.pricing-card {
+  direction: rtl;
+  text-align: center;
+}
+
+.contact-form {
+  direction: rtl;
+}
+
+.chat-window {
+  direction: rtl;
+}
+
+.chat-messages {
+  direction: rtl;
+}
+
+.message {
+  direction: rtl;
+}
+
+.message.received {
+  text-align: right;
+}
+
+.message.sent {
+  text-align: left;
+}
+
+/* Fix icon alignment in RTL */
+.bi {
+  display: inline-block;
+  vertical-align: -0.125em;
+}
+
+/* Fix spacing utilities for RTL */
+.me-auto {
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+.ms-auto {
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+/* Fix text utilities */
+.text-start {
+  text-align: right !important;
+}
+
+.text-end {
+  text-align: left !important;
+}
+
+/* Fix flex utilities for RTL */
+.justify-content-start {
+  justify-content: flex-end !important;
+}
+
+.justify-content-end {
+  justify-content: flex-start !important;
+}
+
+/* Fix float utilities for RTL */
+.float-start {
+  float: right !important;
+}
+
+.float-end {
+  float: left !important;
+}
+
+/* Ensure proper Arabic number display */
+.arabic-numbers {
+  font-feature-settings: "lnum" 1;
+}
+
+/* Fix any remaining text rendering issues */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1;
+}
+
+p, span, div, li, a {
+  text-rendering: optimizeLegibility;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Improve Arabic text spacing */
+.arabic-text {
+  word-spacing: 0.1em;
+  letter-spacing: 0;
+}
+
+/* Fix any layout issues */
+.d-flex {
+  direction: inherit;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Ensure proper input group RTL */
+.input-group {
+  direction: rtl;
+}
+
+.input-group .form-control {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Fix dropdown RTL */
+.dropdown-toggle::after {
+  margin-left: 0;
+  margin-right: 0.255em;
+}
+
+/* Fix carousel RTL if used */
+.carousel {
+  direction: ltr;
+}
+
+.carousel-inner {
+  direction: ltr;
+}
+
+/* Fix offcanvas RTL */
+.offcanvas {
+  direction: rtl;
+}
+
+.offcanvas-header {
+  direction: rtl;
+}
+
+.offcanvas-body {
+  direction: rtl;
+  text-align: right;
+}
